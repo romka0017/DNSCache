@@ -23,9 +23,9 @@ public:
 private:
     DNSCache() {}
 
-    DNSCache(const DNSCache&);
+    DNSCache(const DNSCache&) = delete;
 
-    DNSCache& operator=(DNSCache&);
+    DNSCache& operator=(DNSCache&) = delete;
 
     void set_max_size(size_t max_size);
 
