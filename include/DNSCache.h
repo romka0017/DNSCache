@@ -8,11 +8,14 @@
 class DNSCache
 {
 public:
-    static DNSCache& getInstance(size_t max_size)
+    static DNSCache& getInstance(size_t max_size = 0)
     {
         static DNSCache instance;
-        instance.clear();
-        instance.set_max_size(max_size);
+        if (max_size != 0)
+        {
+            instance.clear();
+            instance.set_max_size(max_size);
+        }
         return instance;
     }
 

@@ -42,7 +42,10 @@ std::string DNSCache::resolve(const std::string& name)
 
     auto it = m_ma.find(name);
     if (it != m_ma.end())
+    {
+        m_dq.splice(m_dq.begin(), m_dq, m_ma[name]);
         return it->second->first;
+    }
 
     return ip;
 }

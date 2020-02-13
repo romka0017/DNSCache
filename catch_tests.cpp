@@ -69,7 +69,6 @@ TEST_CASE("update with overflow", "[update]")
     dns_cache.update("samsung.com", "4.4.4.4");
     dns_cache.update("huawei.com", "5.5.5.5");
 
-    REQUIRE(dns_cache.resolve("intel.com") == "1.1.1.1");
     dns_cache.update("google.com", "6.6.6.6");
     REQUIRE(dns_cache.resolve("intel.com") == "");
 }
